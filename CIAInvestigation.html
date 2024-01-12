@@ -59,7 +59,11 @@
 <div class="tab-content">
        <div id="AboutGeneral" class="container tab-pane active"></div>
            <p>In this project, I scraped over 3,000 declassified CIA briefings from the 1950s and examined the data using a variety of NLP techniques.</p>
+            <p>First, I used the Python module BeautifulSoup (though in hindsight, I really regret not looking into Scrapy) to scrape the CIA website, which does not prohibit web-scraping.</p>
            <p>Once I had the data, which were scans in PDF format, I transfered it to plaintext and did a bit of pre-processing before exploring it.</p>
+            <p>Pre-processing included removing random noise from the original document (smudges from photocopies and stamps showed up as gibberish and random punctuations when transfered to plaintext), removing common words with little meaning (stop words), spellchecking and lemmatizing the rest of the words (putting words in their root form).</p>
+            <p>Spellchecking was the most computationally expensive step in this process. Because the documents were photoscans from the 1950s, a lot of words transferred to text incorrectly. For example, the word 'example' may have been coded as '3x ample' or 'exmq1e'.</p>
+            <p>To get around this, I created a function that checked the word similarity of every word to known words. If there was a match of over 90%, the correctly spelled word was used. Otherwise, the word was abandoned.</p>
 
 </div>
     <div class="tab-content">
