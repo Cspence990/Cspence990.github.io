@@ -26,7 +26,6 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Writings</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href='StoriesAndResearch.html'>Stories and Research</a></li>
-            <li><a class="dropdown-item" href='EncouragingCuriosity.html'>Encouraging Curiosity</a></li>
                <li><a class="dropdown-item" href='PBLFacilitation.html'>Teacher Facilitation Strategies in PBL</a></li>
           </ul>
         </li>
@@ -114,6 +113,37 @@
 </div>
 </div>
 
+
+<div class="container text-center">
+<h2 class="display-5">Geographic Analysis</h2>
+    </div>
+      <div class="row p-3" id="Map">
+   <div class="col-sm-1"></div>
+   <div class="col-sm-10 text-center p-2">
+       <ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-bs-toggle="tab" href="#WorldMapDisplay">World Map Display</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  data-bs-toggle="tab" href="#MapAbout">About</a>
+  </li>
+</ul>
+       <div class="tab-content">
+           <div id="WorldMapDisplay" class="container tab-pane active">
+      <iframe src="NLP Examples/Map.html" height="600" width="80%" class="rounded-4"></iframe>
+               </div>
+       <div id="MapAbout" class="container tab-pane active">
+      <p>This map was created using the Python modules Folium and Spacy.</p>
+
+<p>First, I used Spacy to track mentions of geopolitical entities. Then, I used Folium to indicate these locations as well as their frequency on a choropleth map.</p>
+          <p>One additional step that I took in generating this map was to match geopolitical entities that weren't modern-day nations with the appropriate label.</p>
+          <p>For example, Paris would be marked as France and the USSR would be marked as Russia.</p>
+   </div>
+       </div>
+   <div class="col-sm-1"></div>
+</div>
+
+   
 <div class="container text-center">
 <h2 class="display-5">LDA Topic Modeling</h2>
     </div>
@@ -182,34 +212,7 @@
 
 
 
-<div class="container text-center">
-<h2 class="display-5">Geographic Analysis</h2>
-    </div>
-      <div class="row p-3" id="Map">
-   <div class="col-sm-1"></div>
-   <div class="col-sm-10 text-center p-2">
-       <ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#WorldMapDisplay">World Map Display</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#MapAbout">About</a>
-  </li>
-</ul>
-       <div class="tab-content">
-           <div id="WorldMapDisplay" class="container tab-pane active">
-      <iframe src="NLP Examples/Map.html" height="600" width="80%" class="rounded-4"></iframe>
-               </div>
-       <div id="MapAbout" class="container tab-pane active">
-      <p>This map was created using the Python modules Folium and Spacy.</p>
 
-<p>First, I used Spacy to track mentions of geopolitical entities. Then, I used Folium to indicate these locations as well as their frequency on a choropleth map.</p>
-          <p>One additional step that I took in generating this map was to match geopolitical entities that weren't modern-day nations with the appropriate label.</p>
-          <p>For example, Paris would be marked as France and the USSR would be marked as Russia.</p>
-   </div>
-       </div>
-   <div class="col-sm-1"></div>
-</div>
 
           <div class="container text-center">
 <h2 class="display-5">Just for Fun: Text and Image Generation</h2>
