@@ -54,9 +54,9 @@
     <a class="nav-link"  data-bs-toggle="tab" href="#Example">A sample of two pages of a document...</a>
   </li>
 </ul>
-
+</div>
 <div class="tab-content text-start">
-       <div id="AboutGeneral" class="container tab-pane active"></div>
+       <div id="AboutGeneral" class="container tab-pane active">
            <p>In this project, I scraped 2809 declassified CIA briefings to the president from the 1950s and examined the data using a variety of Natural Language Processing (NLP) techniques.</p>
             <p>I chose this dataset because it seemed perfect for experimenting with NLP -- reading all of these briefs and identifying patterns would be immensely time-consuming, and it would be easy to miss larger themes. THis is where NLP can be useful.</p>
             <p>First, I used the Python module BeautifulSoup (though in hindsight, I really regret not looking into Scrapy) to scrape the CIA website, which does not prohibit web-scraping.</p>
@@ -64,7 +64,7 @@
             <p>Pre-processing included removing random noise from the original document (smudges from photocopies and stamps showed up as gibberish and random punctuations when transferred to plaintext), removing common words with little meaning (stop words), spellchecking and lemmatizing the rest of the words (putting words in their root form).</p>
             <p>Spellchecking was the most computationally expensive step in this process. Because the documents were photoscans from the 1950s, a lot of words transferred to text incorrectly. For example, the word 'example' may have been coded as '3x ample' or 'exmq1e'.</p>
             <p>To get around this, I created a function that checked the word similarity of every word to known words using the Python modules Gensim and Textblob. If there was a match of over 90%, the correctly spelled word was used. Otherwise, the word was abandoned.</p>
-
+</div>
 </div>
     </div>
     <div class="tab-content">
@@ -77,7 +77,7 @@
            <img src="NLP Examples/cia2.png" width="100%" height="100%">
                    </div>
            </div>
-</div>
+
 
 
    </div>
@@ -99,7 +99,7 @@
     <a class="nav-link"  data-bs-toggle="tab" href="#EntityAbout">About</a>
   </li>
 </ul>
-
+</div>
 <div class="tab-content text-start">
        <div id="EntityGraph" class="container tab-pane active">
 
@@ -118,7 +118,7 @@
        </div>
 
    </div>
-</div>
+
 </div>
 
 
@@ -179,7 +179,7 @@
     <span class="carousel-control-next-icon"></span>
   </button>
                 </div>
-            </div>
+
 </div>
 
        <div id="TopicModelDiagram" class="container tab-pane fade">
@@ -193,6 +193,7 @@
 
        </div>
    </div>
+       </div>
    </div>
 
 
