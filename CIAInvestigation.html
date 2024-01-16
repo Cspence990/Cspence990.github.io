@@ -57,23 +57,23 @@
 
 <div class="tab-content">
        <div id="AboutGeneral" class="container tab-pane active"></div>
-           <p>In this project, I scraped over 3,000 declassified CIA briefings from the 1950s and examined the data using a variety of Natural Language Processing (NLP) techniques.</p>
-            <p>I chose this dataset because it seemed perfect for experimenting with NLP -- reading all of these briefs and identifying patterns would be immensley time consuming and it would be easy to miss larger themes. THis is where NLP can be useful.</p>
+           <p>In this project, I scraped 2809 declassified CIA briefings to the president from the 1950s and examined the data using a variety of Natural Language Processing (NLP) techniques.</p>
+            <p>I chose this dataset because it seemed perfect for experimenting with NLP -- reading all of these briefs and identifying patterns would be immensely time-consuming, and it would be easy to miss larger themes. THis is where NLP can be useful.</p>
             <p>First, I used the Python module BeautifulSoup (though in hindsight, I really regret not looking into Scrapy) to scrape the CIA website, which does not prohibit web-scraping.</p>
-           <p>Once I had the data, which were scans in PDF format, I transfered it to plaintext and did a bit of pre-processing before exploring it.</p>
-            <p>Pre-processing included removing random noise from the original document (smudges from photocopies and stamps showed up as gibberish and random punctuations when transfered to plaintext), removing common words with little meaning (stop words), spellchecking and lemmatizing the rest of the words (putting words in their root form).</p>
+           <p>Once I had the data, which were scans in PDF format, I transferred it to plaintext and did a bit of pre-processing before exploring it.</p>
+            <p>Pre-processing included removing random noise from the original document (smudges from photocopies and stamps showed up as gibberish and random punctuations when transferred to plaintext), removing common words with little meaning (stop words), spellchecking and lemmatizing the rest of the words (putting words in their root form).</p>
             <p>Spellchecking was the most computationally expensive step in this process. Because the documents were photoscans from the 1950s, a lot of words transferred to text incorrectly. For example, the word 'example' may have been coded as '3x ample' or 'exmq1e'.</p>
-            <p>To get around this, I created a function that checked the word similarity of every word to known words. If there was a match of over 90%, the correctly spelled word was used. Otherwise, the word was abandoned.</p>
+            <p>To get around this, I created a function that checked the word similarity of every word to known words using the Python modules Gensim and Textblob. If there was a match of over 90%, the correctly spelled word was used. Otherwise, the word was abandoned.</p>
 
 </div>
     </div>
     <div class="tab-content">
        <div id="Example" class="container tab-pane fade">
            <div class="row p-2">
-               <div class="col-sm-5">
+               <div class="col-sm-6">
            <img src="cia1.png" width="100%" height="100%">
                </div>
-               <div class="col-sm-5">
+               <div class="col-sm-6">
            <img src="cia2.png" width="100%" height="100%">
                    </div>
            </div>
@@ -103,17 +103,18 @@
 <div class="tab-content">
        <div id="EntityGraph" class="container tab-pane active">
 
-      <iframe src="NLP Examples/EntityNetworkGraph.html" height="600" width="80%" class="rounded-6" frameBorder="0" style="border:none;"></iframe>
-      <p>Zoom in!</p>
+      <img src="NLP Examples/250Graph.png" class="img-fluid">
+
        </div>
        <div id="EntityAbout" class="container tab-pane fade">
            <p>This graph shows the connections between terms like names, organizations, events, and locations. It was created using the Python modules Pyvis and Spacy.</p>
 
-            <p>First, I used Spacy to create a list of named entities within the text (such as names and locations). Anytime more than one named entity appeared in a paragraph, a relationship was recorded. This data was then used in Pyvis to create this graph.</p>
+            <p>First, I used Spacy to create a list of named entities within the text (such as names and locations). Anytime more than one named entity appeared within a section of a document, a relationship was recorded. This data was then used in Pyvis to create this graph.</p>
 
 <p>Obviously, nuance and meaning is lost in this graph. Additionally, other than weeding out entities like ordinal numbers and money, I used default named entity recognition settings in Spacy, which can make mistakes.</p>
-<p>If all of the connections were shown, the map would be too tangled. Therefore only the most frequent connections are shown in this graph.</p>
-<p>Despite these limitations, this graph does give a sense of some of the major topics within the speech.</p>
+<p>If all of the connections were shown, the map would be too tangled. Therefore, only the most frequent connections are shown in this graph. In this case, all of these connections appeared at least 250 times.</p>
+           <p><a href="NLP Examples/150graph.png">Here</a> is a graph that included connections that appeared at least 150 times.</p>
+<p>Despite these limitations, this graph does give a sense of a few major topics within the speech.</p>
        </div>
 
    </div>
@@ -121,7 +122,83 @@
 </div>
 
 
+
 <div class="container text-center">
+<h2 class="display-5">LDA Topic Modeling</h2>
+    </div>
+   <div class="row p-3" id="TopicModel">
+   <div class="col-sm-1"></div>
+   <div class="col-sm-10 text-center p-2">
+       <ul class="nav nav-tabs" role="tablist">
+           <li class="nav-item">
+    <a class="nav-link active" data-bs-toggle="tab" href="#TopicModelClouds">LDA Topic Model Word Clouds</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-bs-toggle="tab" href="#TopicModelDiagram">pyLDAvis Diagram</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  data-bs-toggle="tab" href="#LDAAbout">About</a>
+  </li>
+</ul>
+       <div class="tab-content">
+        <div id="TopicModelClouds" class="container tab-pane active">
+            <div id="CloudCarousel" class="carousel slide" data-bs-ride="carousel" style="carousel-indicators.button {width: 10px; height: 1px;}">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="4"></button>
+      <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="5"></button>
+  </div>
+
+              <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="NLP Examples/CIA28091Cloud.png"  class="d-block w-100 rounded-4">
+    </div>
+    <div class="carousel-item">
+      <img src="NLP Examples/CIA28092Cloud.png"  class="d-block w-100 rounded-4">
+    </div>
+    <div class="carousel-item">
+      <img src="NLP Examples/CIA28093Cloud.png"  class="d-block w-100 rounded-4">
+    </div>
+                  <div class="carousel-item">
+      <img src="NLP Examples/CIA28094Cloud.png"  class="d-block w-100 rounded-4">
+    </div>
+                                    <div class="carousel-item">
+      <img src="NLP Examples/CIA28095Cloud.png"  class="d-block w-100 rounded-4">
+    </div>
+                                    <div class="carousel-item">
+      <img src="NLP Examples/CIA28096Cloud.png"  class="d-block w-100 rounded-4">
+    </div>
+  </div>
+                 <button class="carousel-control-prev" type="button" data-bs-target="#CloudCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#CloudCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+                </div>
+            </div>
+</div>
+
+       <div id="TopicModelDiagram" class="container tab-pane fade">
+      <iframe src="NLP Examples/lda2809.html" height="500px" width="80%" class="rounded-4"></iframe>
+           </div>
+       <div id="LDAAbout" class="container tab-pane fade">
+      <p>These visualizations use the LDA algorithm to show some of the major themes in the documents.</p>
+          <p>To me, Word Clouds communicated the findings most effectively. However, I also thought pyLDAvis was an interesting visualization of this data worth including as well.</p>
+          <p>At first, the Word Clouds were overcrowded with the same words, such as 'intelligence' and 'central'.</p> 
+          <p>However, after a bit of cleaning, more specific words began to emerge, which gave more detailed hints about the general contents of the documents.</p>
+
+       </div>
+   </div>
+   </div>
+
+
+
+
+    <div class="container text-center">
 <h2 class="display-5">Geographic Analysis</h2>
     </div>
       <div class="row p-3" id="Map">
@@ -150,99 +227,13 @@
    <div class="col-sm-1"></div>
 </div>
 
-   
-<div class="container text-center">
-<h2 class="display-5">LDA Topic Modeling</h2>
-    </div>
-   <div class="row p-3" id="TopicModel">
-   <div class="col-sm-1"></div>
-   <div class="col-sm-10 text-center p-2">
-       <ul class="nav nav-tabs" role="tablist">
-           <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#TopicModelClouds">LDA Topic Model Word Clouds</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-bs-toggle="tab" href="#TopicModelDiagram">pyLDAvis Diagram</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#LDAAbout">About</a>
-  </li>
-</ul>
-       <div class="tab-content">
-        <div id="TopicModelClouds" class="container tab-pane active">
-            <div id="CloudCarousel" class="carousel slide" data-bs-ride="carousel" style="carousel-indicators.button {width: 10px; height: 1px;}">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#CloudCarousel" data-bs-slide-to="3"></button>
-  </div>
 
-              <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="NLP Examples/CIA1Cloud.png"  class="d-block w-100 rounded-4">
-    </div>
-    <div class="carousel-item">
-      <img src="NLP Examples/CIA2Cloud.png"  class="d-block w-100 rounded-4">
-    </div>
-    <div class="carousel-item">
-      <img src="NLP Examples/CIA3Cloud.png"  class="d-block w-100 rounded-4">
-    </div>
-                  <div class="carousel-item">
-      <img src="NLP Examples/CIA4Cloud.png"  class="d-block w-100 rounded-4">
-    </div>
-  </div>
-                 <button class="carousel-control-prev" type="button" data-bs-target="#CloudCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#CloudCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-                </div>
-            </div>
-</div>
 
-       <div id="TopicModelDiagram" class="container tab-pane fade">
-      <iframe src="NLP Examples/lda25.html" height="500px" width="80%" class="rounded-4"></iframe>
-           </div>
-       <div id="LDAAbout" class="container tab-pane fade">
-      <p>These visualizations use the LDA algorithm to show some of the major themes in the documents.</p>
-          <p>To me, Word Clouds communicated the findings most effectively. However, I also thought pyLDAvis was an interesting visualization of this data worth including as well.</p>
-          <p>At first, the Word Clouds were overcrowded with the same words, such as 'intelligence' and 'central'.</p> 
-          <p>However, after a bit of cleaning, more specific words began to emerge, which gave more detailed hints about the general contents of the documents.</p>
 
-       </div>
-   </div>
-   </div>
 </div>
 
 
 
-
-
-
-          <div class="container text-center">
-<h2 class="display-5">Just for Fun: Text and Image Generation</h2>
-    </div>
-      <div class="row p-3" id="Generative">
-   <div class="col-sm-1"></div>
-   <div class="col-sm-10 text-center p-2">
-       <ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#EntityGraph">Text Generation</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#EntityAbout">About</a>
-  </li>
-</ul>
-
-
-      <h5 class="display-5">Generative Text</h5>
-      <p>GPT-2 Fine Tune:  My fellow prisoners! Release prisoner reports favorable of Government 2 Release C03175206 1 According of Ambassador Duncan French Ambassador London expressed opinion Comment Ambassador Ambassador Duncan French expressed disagreement of Embassy London concerning Embassy France report official attitude regarding issue of release prisoners According of Embassy London Ambassador stated Ambassador Duncan French expressed reservations regarding matter including arrest He requested Release C03175206 2 TOP SECRET Approved Release C03175206 SECRET CHANGED REVIEWER Current Intelligence CENTRAL INTELLIGENCE AGENCY Approved Release C03175206 2 2 TOP SECRET Approved Release C03175206 SECRET 3 1· Approved Release C03175206 SECRET 4 Release C03175206 BULLETIN C03175206 NEXT CHANGE GENERAL 1· of 1 Embassy Paris reports Paris Government supports Plan·to release prisoners Paris newspapers editorial denounce plan Planto attempt cover up serious problems Prisoners situation Government believes Plan·to release prisoners would result in economic chaos French officials believe Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Embassy Paris informed Paris Government fears would result result cause financial hardship public opinion Government opposed Planto increase prison conditions Comment Government believed would increase prison conditions might result cause serious financial hardship Government believes Release C03175206 NEXT TOP SECRET Approved Release C03175206 SECRET 4 2 2 NEXT GENERAL 2· Embassy Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believe would cause serious financial hardship Government believes would result would cause serious financial hardship Government believes Release C03175206 NEXT SECRET 6 1· Embassy Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would result cause serious financial hardship Government believed would cause serious financial hardship Government would consider Release C03175206 NEXT SECRET 7 3· Approved Release C03175206 SECRET 8 1· Embassy Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 9 2· Embassy Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 10 2· Embassy Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believed planned release Communist Party members Paris Embassy French officials told France would consider Release C03175206 NEXT SECRET 11 3· Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believed Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 12 4· Embassy Paris reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believed planned Release C03175206 NEXT SECRET 13 4· French Foreign Office reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 14 5· French Foreign Office reports Paris Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 15 5· French Ambassador London comments French Government supports Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believes Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 16 6· French Foreign Office states Paris Government opposed Planto release prisoners Paris newspapers editorial denounce Planto attempt cover up serious problems Prisoners situation Government believed Planto would lead interfere effectively Paris public opinion government would make concessions Organ Government opposed Planto release prisoners Government believed would cause serious financial hardship Government believed Release C03175206 NEXT SECRET 17 7· French Foreign</p>
-      <p>more text</p>
-   </div>
-   <div class="col-sm-1"></div>
-</div>
 
 <p style="text-align:center;">© Copyright Clayton Spencer 2024</p>
       </div>
