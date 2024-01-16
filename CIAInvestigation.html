@@ -5,7 +5,7 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Still in testing phase!</title>
+   <title>CIA NLP Investigation</title>
 </head>
 <body>
 
@@ -39,7 +39,7 @@
   </div>
 </nav>
 
-<div class="container text-center">
+<div class="container">
 <h5 class="display-5">About this project...</h5>
     </div>
 <div class="container-fluid" >
@@ -55,7 +55,7 @@
   </li>
 </ul>
 
-<div class="tab-content">
+<div class="tab-content text-start">
        <div id="AboutGeneral" class="container tab-pane active"></div>
            <p>In this project, I scraped 2809 declassified CIA briefings to the president from the 1950s and examined the data using a variety of Natural Language Processing (NLP) techniques.</p>
             <p>I chose this dataset because it seemed perfect for experimenting with NLP -- reading all of these briefs and identifying patterns would be immensely time-consuming, and it would be easy to miss larger themes. THis is where NLP can be useful.</p>
@@ -84,7 +84,7 @@
 </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-start">
 <h5 class="display-5">Named Entity Network</h5>
     </div>
 <div class="container-fluid" >
@@ -100,7 +100,7 @@
   </li>
 </ul>
 
-<div class="tab-content">
+<div class="tab-content text-start">
        <div id="EntityGraph" class="container tab-pane active">
 
       <img src="NLP Examples/250Graph.png" class="img-fluid">
@@ -123,7 +123,7 @@
 
 
 
-<div class="container text-center">
+<div class="container text-start">
 <h2 class="display-5">LDA Topic Modeling</h2>
     </div>
    <div class="row p-3" id="TopicModel">
@@ -140,7 +140,7 @@
     <a class="nav-link"  data-bs-toggle="tab" href="#LDAAbout">About</a>
   </li>
 </ul>
-       <div class="tab-content">
+       <div class="tab-content text-start">
         <div id="TopicModelClouds" class="container tab-pane active">
             <div id="CloudCarousel" class="carousel slide" data-bs-ride="carousel" style="carousel-indicators.button {width: 10px; height: 1px;}">
   <div class="carousel-indicators">
@@ -198,7 +198,7 @@
 
 
 
-    <div class="container text-center">
+    <div class="container text-start">
 <h2 class="display-5">Geographic Analysis</h2>
     </div>
       <div class="row p-3" id="Map">
@@ -212,7 +212,7 @@
     <a class="nav-link"  data-bs-toggle="tab" href="#MapAbout">About</a>
   </li>
 </ul>
-       <div class="tab-content">
+       <div class="tab-content text-start">
            <div id="WorldMapDisplay" class="container tab-pane active">
       <iframe src="NLP Examples/Map2809.html" height="600" width="80%" class="rounded-4"></iframe>
                </div>
