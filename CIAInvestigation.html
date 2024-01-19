@@ -85,7 +85,7 @@
 </div>
 
 <div class="container text-start">
-<h5 class="display-5">Named Entity Network</h5>
+<h5 class="display-5">Named Entity Network - Visualizing connections between specific entities</h5>
     </div>
 <div class="container-fluid" >
 <div class="row p-3">
@@ -124,7 +124,7 @@
 
 
 <div class="container text-start">
-<h2 class="display-5">LDA Topic Modeling</h2>
+<h2 class="display-5">LDA Topic Modeling - Common vocabulary groups</h2>
     </div>
    <div class="row p-3" id="TopicModel">
    <div class="col-sm-1"></div>
@@ -187,6 +187,7 @@
            </div>
        <div id="LDAAbout" class="container tab-pane fade">
       <p>These visualizations use the LDA algorithm to show some of the major themes in the documents.</p>
+           <p>This algorithm is used to break down data into topics/categories. It was first used in genetics and later applied to NLP.</p>
           <p>To me, Word Clouds communicated the findings most effectively. However, I also thought pyLDAvis was an interesting visualization of this data worth including as well.</p>
           <p>At first, the Word Clouds were overcrowded with the same words, such as 'intelligence' and 'central'.</p> 
           <p>However, after a bit of cleaning, more specific words began to emerge, which gave more detailed hints about the general contents of the documents.</p>
@@ -200,8 +201,9 @@
 
 
     <div class="container text-start">
-<h2 class="display-5">Geographic Analysis</h2>
+<h2 class="display-5">Geographic Analysis - Which nations were mentioned in the documents?</h2>
     </div>
+    <div class="container-fluid" >
       <div class="row p-3" id="Map">
    <div class="col-sm-1"></div>
    <div class="col-sm-10 text-center p-2">
@@ -215,26 +217,44 @@
 </ul>
        <div class="tab-content text-start">
            <div id="WorldMapDisplay" class="container tab-pane active">
-      <iframe src="NLP Examples/Map2809.html" height="600" width="80%" class="rounded-4"></iframe>
+      <iframe src="NLP Examples/Map2809.html" height="600" width="100%" class="rounded-4"></iframe>
                </div>
-       <div id="MapAbout" class="container tab-pane active">
-      <p>This map was created using the Python modules Folium and Spacy.</p>
-
+       <div id="MapAbout" class="container tab-pane fade">
+      <p>This map was created to show which nations appeared in the documents and how frequently they appeared.</p>
+    <p>This map was created using the Python modules Folium and Spacy.</p>
 <p>First, I used Spacy to track mentions of geopolitical entities. Then, I used Folium to indicate these locations as well as their frequency on a choropleth map.</p>
           <p>One additional step that I took in generating this map was to match geopolitical entities that weren't modern-day nations with the appropriate label.</p>
-          <p>For example, Paris would be marked as France and the USSR would be marked as Russia.</p>
+          <p>For example, Tthe USSR would be marked as Russia.</p>
+           <p>One significant limitation is that the names of provinces and natural geographic areas are ignored.</p>
+           <p>Another limitation of this map is that the time period of when nations were mentioned was ignored as well.</p>
    </div>
        </div>
    <div class="col-sm-1"></div>
 </div>
-
-
-
-
 </div>
 
+</div>
+  <div class="container text-start">
+<h2 class="display-5">Using data to find blind-spots and identify research topics...</h2>
+    </div>
+    <div class="container-fluid" >
+      <div class="row p-3">
+   <div class="col-sm-1"></div>
+   <div class="col-sm-10 p-2">
+     <p>Sometimes primary source documents, like the declassified documents examined here, can have details missed in secondary sources like textbooks.But, as stated before, 2809 documents is a lot of dry reading to go through!</p>
+       <p>After looking at these visualizations, a few details stuck out.</p>
+       <p>First, Egypt was really on the minds of the CIA, which is unsurprising given the leadership of Nasser and the Suez Crisis. I had also forgotten how pivotal Indonesia to the US during the Cold War in the 1950s.</p>
+       <p>Second, Bourguiba and Rapacki seemed to be mentioned frequently. Many secondary sources I'd read in the past didn't focus on Polish or Tunisian history, so I didn't recognize these names, but this analysis showed me influential the CIA believed them to be at the time. I also didn't realize</p>
+       <p>Finally, I didn't think much about the role of submarines in the 1950s, but they seemed to play a major role in these documents</p>
+       <p>In a sense, what this analysis did best of all was to point out my blind-spots to me. We all have models of the world and stories about the history of the world in our imaginations that sometimes go unchallenged as we read narratives by similar authors.</p>
+       <p>This experiment with NLP certainly showed me a few of my blind-spots that I can pursue in my future studies of history: the wight that Indonesia and Tunisia had on the minds of the CIA.</p>
+   </div>
+       </div>
+   <div class="col-sm-1"></div>
+</div>
+</div>
 
-
+</div>
 
 <p style="text-align:center;">© Copyright Clayton Spencer 2024</p>
       </div>
