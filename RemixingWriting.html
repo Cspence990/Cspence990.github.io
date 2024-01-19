@@ -54,6 +54,12 @@
 </div>
 <div class="tab-content text-start">
        <div id="AboutGeneral" class="container tab-pane active">
+           <p>In this experiment, I wanted to experiment with generative AI that would only use my work. I didn’t expect any of the writing to be good but I wanted to see:</p>
+<p>1. How different algorithms and models handled the task differently</p>
+<p>2. How it transformed my writing</p>
+<p>3. If it had any interesting ideas</p>
+</div>
+           <div id="Example" class="container tab-pane fade">
            <p></p>
 </div>
     </div>
@@ -70,15 +76,15 @@
 <div class="col-sm-10 text-center p-2">
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#AboutGeneral">About this project...</a>
+    <a class="nav-link active" data-bs-toggle="tab" href="#Markov">Markov Chain Generation</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#Example">A sample of the original writing</a>
+    <a class="nav-link"  data-bs-toggle="tab" href="#AboutMarkov">About</a>
   </li>
 </ul>
 </div>
 <div class="tab-content text-start">
-       <div id="AboutMarkov" class="container tab-pane active">
+       <div id="Markov" class="container tab-pane active">
            <p>All that was used mostly by the way Mara stared out at Andromeda, at the notion of unity among life forms.
 The entrance to Lana resembled other planets was that they appeared to be both romantic and intriguing but, as everyone assured him, he told himself, to trust yourself, Thaileel.
 The people were given tasks in order to it all too ready to shrug off the small bumps as minor collisions with perhaps a few of the window but Thaileel had only just remembered Thaileel’s youth.
@@ -105,6 +111,10 @@ Was he really only knew Hector and Hector’s gazing eyes as he climbed the ladd
 He thought of his hand.
 Rather, it was that the ship and splintered his eardrums with sharp reverberating shrieks.The ship then let out a pop as a voice called out.</p>
 </div>
+           <div id="AboutMarkov" class="container tab-pane fade">
+<p>Markov chains are interesting in NLP because they generate pretty interesting (though usually meaningless) sentences but the algorithm behind them is pretty simple – given any 2 consecutive words in a text(in this case my half finished book), choose the most likely third word, and repeat the process with the last two words in a sentence.</p>
+<p>Markov chains can get stuck in a repetitive loop. For example, they may come up with ‘the ship was the ship was the ship…’. To get around this, I used the Python Module Markovify which avoids these loops.</p>
+</div>
     </div>
 </div>
 </div>
@@ -119,15 +129,15 @@ Rather, it was that the ship and splintered his eardrums with sharp reverberatin
 <div class="col-sm-10 text-center p-2">
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#AboutGeneral">About this project...</a>
+    <a class="nav-link active" data-bs-toggle="tab" href="#RNN">RNN</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#Example">A sample of the original writing</a>
+    <a class="nav-link"  data-bs-toggle="tab" href="#AboutRNN">About</a>
   </li>
 </ul>
 </div>
 <div class="tab-content text-start">
-       <div id="AboutRNN" class="container tab-pane active">
+       <div id="RNN" class="container tab-pane active">
            <p>One thing
 niverse was struggle to the cartographer and the cartographer and the cartographer and thaileel was streiyed to the cartographer and the cartographer and the cartographer and thaileel was streiyed to the cartographer and the cartographer and the cartographer and thaileel was streiyed to the cartographer and the cartographer and the cartographer and thaileel was streiyed to the cartographer and the cartographer and the cartographer and thaileel was streiyed to the cartographer and the cartographe
 Done.
@@ -135,6 +145,9 @@ Done.
 Mara wasn't sure
 he cartographer’s semled that the cartographer was a mand of the ship was she same spol and the cartographer’s semled that he was a mand of the ship was she ship was she ship was she ship was she ship
 </p>
+</div>
+           <div id="AboutRNN" class="container tab-pane fade">
+<p>This neural network focuses on predicting individual letters instead of words and, one iteration at a time, it creates a story letter by letter. One drawback of this particular neural network is that it can get caught in a repetitive loop like those mentioned above.</p>
 </div>
     </div>
 </div>
@@ -151,15 +164,15 @@ he cartographer’s semled that the cartographer was a mand of the ship was she 
 <div class="col-sm-10 text-center p-2">
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#AboutGeneral">About this project...</a>
+    <a class="nav-link active" data-bs-toggle="tab" href="#GPT2">About this project...</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#Example">A sample of the original writing</a>
+    <a class="nav-link"  data-bs-toggle="tab" href="#AboutGPT2">About</a>
   </li>
 </ul>
 </div>
 <div class="tab-content text-start">
-       <div id="AboutGOPT2" class="container tab-pane active">
+       <div id="GPT2" class="container tab-pane active">
            <p>'one thing'
 One thing I found interesting about this book was that the title emphasized individuality rather than individuality. The primary difference between the two books was that the title explained individuality, but not individuality itself. I don't know where this came from, but I found it to be a rather perverse way of saying that a book must be understood and understood by everyone. I found it curious, really, that this title was dedicated solely to individuality—not individuality. The book itself must not be read as a whole, but rather as a whole, divided into sections. In order to do that we had to be able to read each other with a single glance and, given the limited space, each book divided itself into sections. What was the purpose of this book? What was the purpose of a section? Well, there was one interesting fact about the book that made me wonder if it was just as important to Thaileel that The Raven King were able to study each other more actively and well than they had ever been. He had always dreamed that someday, if only The Raven King would have the time and resources to study the others, they would one day be able to become truly free. And just then, it happened that his family—his own—had found a language that was not only more elegant than Thaileel’s native tongue, but more natural to him than either Thaileel or Emile would have ever imagined possible. It was here, he would have to return to, that Walter would find out that The Raven King was no longer a slave to his will and had already made his decision. It was also here that Emile would discover that Walter would have had to kill himself to survive. The fact that Walter had just spent so long in Emile’s absence was something that had been hidden in the entirety of Walter’s mind, no less than in all of Emile’s. It was as though Walter had just found a language that was devoid of meaning, devoid of meaning and devoid of meaning but filled with artificial life.
 The book began with a title similar to Walter’s own, which Thaileel had memorized and used to identify each of his physical characteristics. It said:
@@ -187,6 +200,9 @@ The other crewmembers were immediately shaken. They rushed out into the darkness
 The door to Hector’s pod opened and two men climbed over it. They began to descend towards the hatch. It was dark, but it was dark in the end. Hector began to talk with the Cartographer. It was a discussion that had nothing to do with what happened to Thaileel. Rather it was about Hector’s life as well as the world in which Hector’s pod had become. Hector had been given the power to see into the future and was now, once again, the king of the future. It was not just that Hector was already living in what would become of the human race and the stars, but that he was inheriting the future. He had created a society based on a set of rules that would allow him to live his life according to the rules of the future without being chained to any particular destiny.
 He was not allowed to stay</p>
 </div>
+           <div id="AboutGPT2" class="container tab-pane fade">
+<p>Going beyond an RNN with my text alone seemed like a futile attempt (I think I’d need a much more expensive computer!) so I decided to fine-tune a few models. GPT-2 was my first exposure to AI generated text and the first large language model that I ever fine-tuned.</p>
+</div>
     </div>
 </div>
 </div>
@@ -202,15 +218,15 @@ He was not allowed to stay</p>
 <div class="col-sm-10 text-center p-2">
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" data-bs-toggle="tab" href="#AboutGeneral">About this project...</a>
+    <a class="nav-link active" data-bs-toggle="tab" href="#TinyLlama">About this project...</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link"  data-bs-toggle="tab" href="#Example">A sample of the original writing</a>
+    <a class="nav-link"  data-bs-toggle="tab" href="#AboutTinyLlama">About</a>
   </li>
 </ul>
 </div>
 <div class="tab-content text-start">
-       <div id="AboutTinyLlama" class="container tab-pane active">
+       <div id="TinyLlama" class="container tab-pane active">
            <p>Mara wasn't sure if she would or not. As if to keep things quiet, she didn’t answer.”
 	“Yes, but you’re not alone.” The Cartographer responded as he listened, taking Thaileel by the sleeve and placing his hand on hers. The two boys followed behind Shevara and Emile on their ship to wait.
 	“We’ve come a long way, then, from what I'm told. I wonder how we could have waited such a long time, could we?”
@@ -302,6 +318,9 @@ Hector began to answer, "yes," but Walter interrupted him.
 Thaileel would have thought nothing of this-- he had been on Old Moon long enough that no one could really tell him anything. But Walter was not on Old Moon. He was on Ura.
 The cold was so great that it could be seen from from space. Thaileel would have thought nothing of this-- he had been on Ura for so long that no one could really tell him anything. But Walter had noticed something. There was something about Ura that made Thaileel feel safe. He felt safe because Walter was with him. He felt safe because Hector was with him. He felt safe because they were able to speak to him and explain to him that his life was not safe if he continued to do what he had set out to do.
 It was getting colder and civilization seemed to cease. All roads ended. There were no more huts, no more fires. The</p>
+</div>
+           <div id="AboutTinyLlama" class="container tab-pane fade">
+<p>LLMs have come a long way since GPT2. I wanted to train a newer model but my GPU couldn’t handle training larger models. Fortunately it could handle TinyLlama, though I was a bit underwhelmed with the oftentimes repetitive results.</p>
 </div>
     </div>
 </div>
