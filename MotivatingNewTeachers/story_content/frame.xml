@@ -1623,9 +1623,9 @@
         </slidelink>
         <slidelink slideid="_player.6r7TaaG6nny" displaytext="Intrinsic and Extrinsic Motivation" expand="true" type="slide">
           <links>
-            <slidelink slideid="_player.6r7TaaG6nny.6jVnPnzo4lR" displaytext="All about intrinsic and extrinsic motivation" expand="false" type="slide" />
-            <slidelink slideid="_player.6r7TaaG6nny.6RSAL7aSQNu" displaytext="All about intrinsic and extrinsic motivation" expand="false" type="slide" />
-            <slidelink slideid="_player.6r7TaaG6nny.6Sn1wojBYpc" displaytext="All about intrinsic and extrinsic motivation" expand="false" type="slide" />
+            <slidelink slideid="_player.6r7TaaG6nny.6jVnPnzo4lR" displaytext="Extrinsic Motivation" expand="false" type="slide" />
+            <slidelink slideid="_player.6r7TaaG6nny.6AiNZNMGgRt" displaytext="Intrinsic Motivation" expand="false" type="slide" />
+            <slidelink slideid="_player.6r7TaaG6nny.65OC8Qhrxjr" displaytext="Intrinsic Motivation" expand="false" type="slide" />
           </links>
         </slidelink>
         <slidelink slideid="_player.6SVaQLnCB4P" displaytext="Motivation Questions" expand="true" type="slide">
@@ -1637,6 +1637,7 @@
         <slidelink slideid="_player.6OJWJs1Let4" displaytext="Review" expand="true" type="slide">
           <links>
             <slidelink slideid="_player.6OJWJs1Let4.5qrDsmipdMy" displaytext="Review" expand="false" type="slide" />
+            <slidelink slideid="_player.6OJWJs1Let4.6LV7V7MTdSB" displaytext="References" expand="false" type="slide" />
           </links>
         </slidelink>
       </links>
